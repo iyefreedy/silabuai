@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Room extends Model
+class RoomModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'rooms';
@@ -14,7 +14,7 @@ class Room extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['room_name', 'room_slug', 'room_description', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['room_name', 'room_slug', 'room_description', 'image', 'created_at', 'updated_at'];
 
     // Dates
     protected $useTimestamps = true;

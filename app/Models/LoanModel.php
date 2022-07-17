@@ -14,7 +14,7 @@ class LoanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['room_id', 'start_time', 'end_time', 'status', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['room_id', 'include_room', 'start_time', 'end_time', 'description', 'status', 'created_at', 'updated_at'];
 
     // Dates
     protected $useTimestamps = true;

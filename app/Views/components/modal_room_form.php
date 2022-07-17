@@ -8,10 +8,17 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <?= csrf_field() ?>
                 <input type="hidden" name="id">
                 <div class="modal-body">
+                    <div class="mb-3">
+                        <img class="img-thumbnail img-preview" alt="...">
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="room_image" id="customFile" onchange="previewImage()">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Nama Ruangan</label>
                         <input type="text" class="form-control" name="room_name">
@@ -52,3 +59,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    function previewImage() {
+        let imageLabel = document.querySelector('.custom-file-label');
+        let imageInput = document.querySelector('.custom-file-input');
+        let imageElement = document.querySelector('.img-thumbnail.img-preview');
+
+        const fileReader = new FileReader();
+        imageLabel.textContent = imageInput.files[0].name;
+        fileReader.readAsDataURL(imageInput.files[0]);
+
+        fileReader.onload = function(e) {
+            imageElement.src = e.target.result;
+        }
+    }
+</script>

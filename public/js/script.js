@@ -7,34 +7,44 @@ $(function () {
     if (modalType === "insert") {
       modal.find(".modal-title").text("Tambah Ruangan");
       modal.find(".form-control").attr("disabled", false);
+      modal.find(".custom-file-input").attr("disabled", false);
       modal.find("[type=submit]").show();
       modal.find("[name=id]").val("");
       modal.find("[name=room_name]").val("");
       modal.find("[name=room_description]").val("");
+      modal.find("img").attr("src", "/uploads/images/rooms/404.jpg");
       modal.find("[method=post]").attr("action", button.data("action"));
     }
 
     if (modalType === "show") {
       modal.find(".modal-title").text("Detail Ruangan");
       modal.find(".form-control").attr("disabled", true);
+      modal.find(".custom-file-input").attr("disabled", true);
       modal.find("[type=submit]").hide();
       modal.find("[name=id]").val(button.data("id"));
       modal.find("[name=room_name]").val(button.data("room-name"));
       modal
         .find("[name=room_description]")
         .val(button.data("room-description"));
+      modal
+        .find("img")
+        .attr("src", "/uploads/images/rooms/" + button.data("room-image"));
       modal.find("[method=post]").attr("action", button.data("action"));
     }
 
     if (modalType === "edit") {
       modal.find(".modal-title").text("Edit Ruangan");
       modal.find(".form-control").attr("disabled", false);
+      modal.find(".custom-file-input").attr("disabled", false);
       modal.find("[type=submit]").show();
       modal.find("[name=id]").val(button.data("id"));
       modal.find("[name=room_name]").val(button.data("room-name"));
       modal
         .find("[name=room_description]")
         .val(button.data("room-description"));
+      modal
+        .find("img")
+        .attr("src", "/uploads/images/rooms/" + button.data("room-image"));
       modal.find("[method=post]").attr("action", button.data("action"));
     }
   });
@@ -61,18 +71,21 @@ $(function () {
     if (modalType === "insert") {
       modal.find(".modal-title").text("Tambah Ruangan");
       modal.find(".form-control").attr("disabled", false);
+      modal.find(".custom-file-input").attr("disabled", false);
       modal.find("[type=submit]").show();
       modal.find("[name=id]").val("");
       modal.find("[name=room_id]").val("");
       modal.find("[name=tool_name]").val("");
       modal.find("[name=tool_description]").val("");
       modal.find("[name=tool_quantity]").val("");
+      modal.find("img").attr("src", "/uploads/images/tools/404.jpg");
       modal.find("[method=post]").attr("action", button.data("action"));
     }
 
     if (modalType === "show") {
       modal.find(".modal-title").text("Detail Ruangan");
       modal.find(".form-control").attr("disabled", true);
+      modal.find(".custom-file-input").attr("disabled", true);
       modal.find("[type=submit]").hide();
       modal.find("[name=id]").val(button.data("id"));
       modal.find("[name=room_id]").val(button.data("room-id"));
@@ -81,12 +94,16 @@ $(function () {
         .find("[name=tool_description]")
         .val(button.data("tool-description"));
       modal.find("[name=tool_quantity]").val(button.data("tool-quantity"));
+      modal
+        .find("img")
+        .attr("src", "/uploads/images/tools/" + button.data("tool-image"));
       modal.find("[method=post]").attr("action", button.data("action"));
     }
 
     if (modalType === "edit") {
-      modal.find(".modal-title").text("Edit Ruangan");
+      modal.find(".modal-title").text("Edit Alat");
       modal.find(".form-control").attr("disabled", false);
+      modal.find(".custom-file-input").attr("disabled", false);
       modal.find("[type=submit]").show();
       modal.find("[name=id]").val(button.data("id"));
       modal.find("[name=room_id]").val(button.data("room-id"));
@@ -95,6 +112,9 @@ $(function () {
         .find("[name=tool_description]")
         .val(button.data("tool-description"));
       modal.find("[name=tool_quantity]").val(button.data("tool-quantity"));
+      modal
+        .find("img")
+        .attr("src", "/uploads/images/tools/" + button.data("tool-image"));
       modal.find("[method=post]").attr("action", button.data("action"));
     }
   });

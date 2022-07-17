@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Tool extends Model
+class ToolModel extends Model
 {
     protected $table            = 'tools';
-    protected $allowedFields    = ['room_id', 'tool_name', 'tool_slug', 'tool_description', 'tool_quantity', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['room_id', 'tool_name', 'tool_slug', 'tool_description', 'tool_quantity', 'image', 'created_at', 'updated_at'];
 
     // Dates
     protected $useTimestamps = true;

@@ -16,6 +16,7 @@
             <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>Foto</th>
                         <th>Nama Ruangan</th>
                         <th>Deskripsi</th>
                         <th>Action</th>
@@ -23,6 +24,7 @@
                 </thead>
                 <tfoot>
                     <tr>
+                        <th>Foto</th>
                         <th>Nama Ruangan</th>
                         <th>Deskripsi</th>
                         <th>Action</th>
@@ -31,12 +33,16 @@
                 <tbody>
                     <?php foreach ($rooms as $room) : ?>
                         <tr>
+                            <td><img class="img-thumbnail" width="150" src="<?= base_url() ?>/uploads/images/rooms/<?= $room['image'] ?>" alt="<?= $room['room_slug'] ?>"></td>
                             <td><?= $room['room_name'] ?></td>
                             <td><?= $room['room_description'] ?></td>
                             <td>
                                 <div class="d-flex justify-content-center align-items-center flex-wrap">
-                                    <a href="#" data-toggle="modal" data-target="#roomModal" data-modal-type="show" data-action="" data-id="<?= $room['id'] ?>" data-room-name="<?= $room['room_name'] ?>" data-room-description="<?= $room['room_description'] ?>" class="btn btn-info btn-sm m-1"><i class="fas fa-eye fa-xs"></i></a>
-                                    <a href="#" data-toggle="modal" data-target="#roomModal" data-modal-type="edit" data-action="/admin/edit-room" data-id="<?= $room['id'] ?>" data-room-name="<?= $room['room_name'] ?>" data-room-description="<?= $room['room_description'] ?>" class="btn btn-warning btn-sm m-1"><i class="fas fa-pen fa-xs"></i></a>
+                                    <!-- Show modal -->
+                                    <a href="#" data-toggle="modal" data-target="#roomModal" data-modal-type="show" data-action="" data-id="<?= $room['id'] ?>" data-room-name="<?= $room['room_name'] ?>" data-room-description="<?= $room['room_description'] ?>" data-room-image="<?= $room['image'] ?>" class="btn btn-info btn-sm m-1"><i class="fas fa-eye fa-xs"></i></a>
+                                    <!-- Edit modal -->
+                                    <a href="#" data-toggle="modal" data-target="#roomModal" data-modal-type="edit" data-action="/admin/edit-room" data-id="<?= $room['id'] ?>" data-room-name="<?= $room['room_name'] ?>" data-room-description="<?= $room['room_description'] ?>" data-room-image="<?= $room['image'] ?>" class="btn btn-warning btn-sm m-1"><i class="fas fa-pen fa-xs"></i></a>
+                                    <!-- Delete modal -->
                                     <a href="#" data-toggle="modal" data-target="#deleteRoomModal" data-action="/admin/delete-room" data-id="<?= $room['id'] ?>" data-room-name="<?= $room['room_name'] ?>" class="btn btn-danger btn-sm m-1"><i class="fas fa-trash-alt fa-xs"></i></a>
                                 </div>
                             </td>

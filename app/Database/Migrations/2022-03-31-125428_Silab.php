@@ -14,6 +14,7 @@ class Silab extends Migration
             'room_name' => ['type' => 'VARCHAR', 'constraint' => 255],
             'room_slug' => ['type' => 'VARCHAR', 'constraint' => 255],
             'room_description' => ['type' => 'TEXT'],
+            'image' => ['type' => 'VARCHAR', 'constraint' => 255],
             'created_at' => ['type' => 'DATETIME'],
             'updated_at' => ['type' => 'DATETIME'],
         ];
@@ -29,6 +30,7 @@ class Silab extends Migration
             'tool_slug' => ['type' => 'VARCHAR', 'constraint' => 255],
             'tool_description' => ['type' => 'TEXT'],
             'tool_quantity' => ['type' => 'INT', 'constraint' => 11],
+            'image' => ['type' => 'VARCHAR', 'constraint' => 255],
             'created_at' => ['type' => 'DATETIME'],
             'updated_at' => ['type' => 'DATETIME'],
         ];
@@ -41,8 +43,10 @@ class Silab extends Migration
         $fields = [
             'id' => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
             'room_id' => ['type' => 'INT', 'constraint' => 11, 'unsigned' => true],
+            'include_room' => ['type' => 'INT', 'constraint' => 1],
             'start_time' => ['type' => 'DATETIME'],
             'end_time' => ['type' => 'DATETIME'],
+            'description' => ['type' => 'text'],
             'status' => ['type' => 'INT', 'constraint' => 1],
             'created_at' => ['type' => 'DATETIME'],
             'updated_at' => ['type' => 'DATETIME'],

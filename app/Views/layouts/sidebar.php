@@ -22,7 +22,7 @@
 
     <?php
 
-    use App\Models\Room;
+    use App\Models\RoomModel;
 
     if (in_groups('admin')) : ?>
         <li class="nav-item <?= $active == 'room-list' ? 'active' : '' ?>">
@@ -51,6 +51,15 @@
         </li>
     <?php endif; ?>
 
+    <?php if (in_groups('admin')) : ?>
+        <li class="nav-item <?= $active == 'user-list' ? 'active' : '' ?>">
+            <a class="nav-link" href="/admin/loan-list">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Data Peminjaman</span>
+            </a>
+        </li>
+    <?php endif; ?>
+
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -59,7 +68,7 @@
         </a>
 
         <?php
-        $rooms = new Room();
+        $rooms = new RoomModel();
         $rooms = $rooms->findAll();
         ?>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">

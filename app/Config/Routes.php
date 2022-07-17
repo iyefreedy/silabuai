@@ -35,17 +35,19 @@ $routes->get('/', 'Home::index');
 
 $routes->group('admin', ['filter' => 'role:admin,superadmin'], function ($routes) {
 
-    $routes->get('room-list', 'Home::roomList');
-    $routes->post('insert-room', 'Home::insertRoom');
-    $routes->post('edit-room', 'Home::editRoom');
-    $routes->post('delete-room', 'Home::deleteRoom');
+    $routes->get('room-list', 'Room::roomList');
+    $routes->post('insert-room', 'Room::insertRoom');
+    $routes->post('edit-room', 'Room::editRoom');
+    $routes->post('delete-room', 'Room::deleteRoom');
 
-    $routes->get('tool-list', 'Home::toolList');
-    $routes->post('insert-tool', 'Home::insertTool');
-    $routes->post('edit-tool', 'Home::editTool');
+    $routes->get('tool-list', 'Tool::toolList');
+    $routes->post('insert-tool', 'Tool::insertTool');
+    $routes->post('edit-tool', 'Tool::editTool');
     $routes->post('delete-tool', 'Home::deleteTool');
 
     $routes->get('user-list', 'Home::userList');
+
+    $routes->get('loan-list', 'Home::loanList');
 });
 
 $routes->get('room/(:segment)', 'Home::room/$1');

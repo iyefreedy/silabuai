@@ -8,7 +8,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post" action="<?= route_to('insert-loan') ?>">
+            <form method="POST" action="<?= route_to('insert-loan') ?>">
                 <?= csrf_field() ?>
                 <input type="hidden" name="room_id" value="<?= $room['id'] ?>">
                 <div class="modal-body">
